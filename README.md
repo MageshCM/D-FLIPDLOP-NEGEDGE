@@ -28,17 +28,49 @@ Next state of D flip-flop is always equal to data input, D for every positive tr
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Declare ports for the D flip-flop module, specifying inputs (D, CLK) and outputs (Q, Q_bar).
+
+2.Write Verilog code to create the functionality of the D flip-flop, triggered by the rising edge of the clock signal (posedge CLK).
+
+3.Develop a Verilog testbench to simulate how the D flip-flop responds to different input scenarios.
+
+4.Set up the testbench to test various combinations of input signals (D, CLK) to cover all possible states.
+
+5.Confirm that the D flip-flop's outputs (Q, Q_bar) behave as expected according to its functional table.
+
+6.Ensure that the design doesn't encounter race conditions or undefined states by analyzing the timing and sequence of input changes.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+Program for flipflops and verify its truth table in quartus using Verilog programming.
+
+Developed by : Magesh C M
+
+RegisterNumber : 212223220053
+```
+module DFLIPFLOPNEGEDGE(D,Clock,reset,Q);
+input D,reset,Clock;
+output reg Q;
+always @ (negedge Clock)
+if(!reset)
+Q <= 0;
+else
+Q <= D;
+endmodule
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
+
+![image](https://github.com/MageshCM/D-FLIPDLOP-NEGEDGE/assets/164765537/5cc0805a-65e0-419a-a7df-b241b9dfb584)
+
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![image](https://github.com/MageshCM/D-FLIPDLOP-NEGEDGE/assets/164765537/1f42ae21-5f87-4939-9087-0305ae4e6b41)
+
+
 
 **RESULTS**
+
+Thus the program to implement a D flipflop using verilog and validating their functionality using their functional tables.
